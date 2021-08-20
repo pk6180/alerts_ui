@@ -1,0 +1,98 @@
+<form >
+    {{ alertRequest | json }}
+    <table>
+      <tr>
+        <td colspan="2">Enter list of equipment initials and numbers (comma delimited):</td>
+        <td>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>List of equipment Initials,numbers</mat-label>
+                <textarea matInput placeholder="Initial,Number"></textarea>
+              </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">Enter list of physical Resource IDs</td>
+        <td>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>List of physical Resource IDs</mat-label>
+                <textarea matInput placeholder="Physical Resource IDs"></textarea>
+              </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td rowspan="7">Search Criteria</td>
+        <td>Routing to yard Flag</td>
+        <td>
+            <mat-radio-group >
+                <mat-radio-button value="auto">Yes</mat-radio-button>
+                <mat-radio-button value="always">No</mat-radio-button>
+              </mat-radio-group>
+        </td>
+      </tr>
+      <tr>
+        <td>Alert Status:</td>
+        <td>
+            <mat-checkbox class="example-margin" [(ngModel)]="checked">Opened Only</mat-checkbox><br/>
+            <mat-checkbox class="example-margin" [(ngModel)]="checked">Closed Only</mat-checkbox>
+        </td>
+      </tr>
+      <tr>
+        <td>Alert Definition Status:</td>
+        <td>
+            <mat-checkbox class="example-margin" [(ngModel)]="checked">Mechanical Production</mat-checkbox><br/>
+            <mat-checkbox class="example-margin" [(ngModel)]="checked">Operational Production</mat-checkbox><br/>
+            <mat-checkbox class="example-margin" [(ngModel)]="checked">Verification</mat-checkbox><br/>
+        </td>
+      </tr>
+      <tr>
+        <td>Alert Source:</td>
+        <td>
+            <mat-checkbox class="example-margin" [(ngModel)]="checked">Early Warning</mat-checkbox><br/>
+            <mat-checkbox class="example-margin" [(ngModel)]="checked">Wayside</mat-checkbox><br/>
+            <mat-checkbox class="example-margin" [(ngModel)]="checked">Problem Log</mat-checkbox><br/>
+            <mat-checkbox class="example-margin" [(ngModel)]="checked">Locomotive</mat-checkbox>
+        </td>
+      </tr>
+      <tr>
+        <td>Alert Pattern Number List:</td>
+        <td>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Pattern Number</mat-label>
+                <input matInput>
+              </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>Alert Type List:</td>
+        <td>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Alert Type</mat-label>
+                <input matInput>
+              </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+            <mat-radio-group >
+                <mat-radio-button value="auto">Opened Date List</mat-radio-button><br/>
+                <mat-radio-button value="always">Closed Date List</mat-radio-button><br/>
+                <mat-radio-button value="auto">Opened Date Range</mat-radio-button><br/>
+                <mat-radio-button value="always">Closed Date Range</mat-radio-button>
+              </mat-radio-group>
+        </td>
+        <td>
+          <mat-form-field appearance="fill">
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <button mat-raised-button color="primary">Submit</button>
+        </td>
+      </tr>
+    </table>
+    </form>

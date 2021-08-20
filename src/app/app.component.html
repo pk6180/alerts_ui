@@ -1,0 +1,10 @@
+<header>
+</header>
+<!--h1>{{title}}</h1-->
+<mat-toolbar>  
+  <a mat-button [routerLink]="['/get-alerts']">get-alerts</a>
+  <a mat-button [routerLink]="['/get-alerts-summary']">get-alerts-summary</a>
+</mat-toolbar>
+
+<!--pre>{{alertResponse | json }}</pre-->
+<router-outlet></router-outlet>
